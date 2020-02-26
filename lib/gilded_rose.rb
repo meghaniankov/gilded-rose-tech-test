@@ -7,26 +7,10 @@ class GildedRose
     items.each do |item|
       AgedBrie.update(item) if item.name == 'Aged Brie'
       Sulfuras.update(item) if item.name == 'Sulfuras, Hand of Ragnaros'
+      BackstagePasses.update(item) if item.name == 'Backstage passes to a TAFKAL80ETC concert'
 
-      update_backstage_passes(item) if item.name == 'Backstage passes to a TAFKAL80ETC concert'
       update_other(item) if item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert' && item.name != 'Sulfuras, Hand of Ragnaros'
     end
-  end
-
-  def update_backstage_passes(item)
-    return item.quality if item.quality == 50
-
-    if item.sell_in <= 0
-      item.quality = 0
-    elsif item.sell_in <= 5
-      item.quality += 3
-    elsif item.sell_in <= 10
-      item.quality += 2
-    elsif item.sell_in > 10
-      item.quality += 1
-    end
-
-    update_sell_in(item)
   end
 
   def update_other(item)
