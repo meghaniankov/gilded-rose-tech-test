@@ -72,9 +72,17 @@ describe GildedRose do
       expect(item.quality).to eq 50
     end
 
-
-
   end
   
+  describe '#update_other' do
+    before do
+      @item = Item.new("foo", 10, 10)
+      subject.update_other(@item)
+    end
+
+    it 'decreases quality at the end of each day' do
+      expect(@item.quality).to eq 9
+    end
+  end
 
 end

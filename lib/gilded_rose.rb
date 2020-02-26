@@ -73,6 +73,10 @@ class GildedRose
       
   end
 
+  def update_other(item)
+    item.quality -= 1
+  end
+
 end
 
 class Item
