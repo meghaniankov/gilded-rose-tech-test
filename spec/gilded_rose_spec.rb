@@ -47,6 +47,13 @@ describe GildedRose do
       subject.update_backstage_passes(item)
       expect(item.quality).to eq 11
     end
+
+    it 'quality increases by 2 each day within 10 days of concert' do
+      item = Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 10)
+      subject.update_backstage_passes(item)
+      expect(item.quality).to eq 12
+    end
+
   end
   
 
