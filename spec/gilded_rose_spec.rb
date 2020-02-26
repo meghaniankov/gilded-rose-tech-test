@@ -9,22 +9,6 @@ describe GildedRose do
     end
   end
 
-  describe '#update_aged_brie' do
-    before do
-      @item = Item.new("Aged Brie", 0, 0)
-      subject.update_aged_brie(@item)
-    end
-
-    it 'increases the quality at the end of each day' do
-      expect(@item.quality).to eq 1
-    end
-
-    it 'never increases the quality over 50' do
-      51.times { subject.update_aged_brie(@item) }
-      expect(@item.quality).to eq 50
-    end
-  end
-
   describe '#update_sulfuras' do
     before do
       @item = Item.new("Sulfuras, Hand of Ragnaros", 10, 10)

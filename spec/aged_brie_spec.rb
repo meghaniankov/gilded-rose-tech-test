@@ -14,6 +14,11 @@ describe AgedBrie do
       expect(item.sell_in).to eq 9
     end
 
+    it 'never increases the quality over 50' do
+      51.times { subject.update(item) }
+      expect(item.quality).to eq 50
+    end
+
     it 'returns the item' do
       expect(subject.update(item)).to eq item
     end

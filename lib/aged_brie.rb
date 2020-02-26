@@ -9,7 +9,6 @@ module AgedBrie
   private
 
   def self.update_quality(item)
-    p item.quality
     item.quality < 50 ? item.quality += 1 : item.quality
   end
 
