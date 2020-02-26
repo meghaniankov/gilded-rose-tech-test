@@ -66,6 +66,13 @@ describe GildedRose do
       expect(item.quality).to eq 0
     end
 
+    it 'never updates the quality above 50' do
+      item = Item.new("Backstage passes to a TAFKAL80ETC concert", 1, 50)
+      subject.update_backstage_passes(item)
+      expect(item.quality).to eq 50
+    end
+
+
 
   end
   
