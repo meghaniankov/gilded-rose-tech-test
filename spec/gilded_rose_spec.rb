@@ -60,6 +60,12 @@ describe GildedRose do
       expect(item.quality).to eq 13
     end
 
+    it 'quality drops to 0 after the concert' do
+      item = Item.new("Backstage passes to a TAFKAL80ETC concert", 0, 10)
+      subject.update_backstage_passes(item)
+      expect(item.quality).to eq 0
+    end
+
 
   end
   
