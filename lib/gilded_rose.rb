@@ -13,10 +13,6 @@ class GildedRose
     end
   end
 
-  def update_sulfuras(item)
-    item
-  end
-
   def update_backstage_passes(item)
     return item.quality if item.quality == 50
 
