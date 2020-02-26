@@ -47,11 +47,18 @@ class GildedRose
           end
         end
       end
+
+      # update_aged_brie(item) if item.name == 'Aged Brie'
+      # update_backstage_passes(item) if item.name == 'Backstage passes to a TAFKAL80ETC concert'
+      # update_sulfuras(item) if item.name == 'Sulfuras, Hand of Ragnaros'
+      # update_other(item) if item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert' && item.name != 'Sulfuras, Hand of Ragnaros'
+
     end
   end
 
   def update_aged_brie(item)
     item.quality < 50 ? item.quality += 1 : item.quality
+    update_sell_in(item)
   end
 
   def update_sulfuras(item)
@@ -70,7 +77,8 @@ class GildedRose
     else
       item.quality += 1
     end
-      
+
+    update_sell_in(item)
   end
 
   def update_other(item)
@@ -81,6 +89,13 @@ class GildedRose
     else
       item.quality -= 1
     end
+
+    update_sell_in(item)
+
+  end
+
+  def update_sell_in(item)
+    item.sell_in -= 1
   end
 
 end
