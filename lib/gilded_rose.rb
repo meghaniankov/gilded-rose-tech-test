@@ -1,13 +1,14 @@
 require 'aged_brie'
+require 'sulfuras'
 
 class GildedRose
 
   def update_quality(items)
     items.each do |item|
       AgedBrie.update(item) if item.name == 'Aged Brie'
+      Sulfuras.update(item) if item.name == 'Sulfuras, Hand of Ragnaros'
 
       update_backstage_passes(item) if item.name == 'Backstage passes to a TAFKAL80ETC concert'
-      update_sulfuras(item) if item.name == 'Sulfuras, Hand of Ragnaros'
       update_other(item) if item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert' && item.name != 'Sulfuras, Hand of Ragnaros'
     end
   end

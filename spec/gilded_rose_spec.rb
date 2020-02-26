@@ -9,21 +9,6 @@ describe GildedRose do
     end
   end
 
-  describe '#update_sulfuras' do
-    before do
-      @item = Item.new("Sulfuras, Hand of Ragnaros", 10, 10)
-      subject.update_sulfuras(@item)
-    end
-
-    it 'never updates the quality' do
-      expect(@item.quality).to eq 10
-    end
-
-    it 'never updates the sell_in' do
-      expect(@item.sell_in).to eq 10
-    end
-  end
-
   describe '#update_backstage_passes' do
 
     it 'quality increases by 1 each day before 10 days of concert' do
