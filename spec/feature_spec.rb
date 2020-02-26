@@ -74,7 +74,7 @@ describe 'Gilded Rose Features' do
   end
 
   context 'for Backstage Passes' do
-    it 'quality increases normally each day before 10 days of concert' do
+    it 'quality increases by 1 each day before 10 days of concert' do
       item = Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 10)
       items = [item]
       gilded_rose = GildedRose.new()

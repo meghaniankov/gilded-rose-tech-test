@@ -58,6 +58,10 @@ class GildedRose
     item
   end
 
+  def update_backstage_passes(item)
+    item.quality += 1
+  end
+
 end
 
 class Item

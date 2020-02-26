@@ -39,6 +39,15 @@ describe GildedRose do
       expect(@item.sell_in).to eq 10
     end
   end
+
+  describe '#update_backstage_passes' do
+
+    it 'quality increases by 1 each day before 10 days of concert' do
+      item = Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 10)
+      subject.update_backstage_passes(item)
+      expect(item.quality).to eq 11
+    end
+  end
   
 
 end
