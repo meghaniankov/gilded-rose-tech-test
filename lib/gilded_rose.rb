@@ -51,6 +51,9 @@ class GildedRose
       end
     end
   end
+
+  private
+
 end
 
 class Item

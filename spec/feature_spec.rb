@@ -18,6 +18,22 @@ describe 'Gilded Rose Features' do
       gilded_rose.update_quality()
       expect(item.quality).to eq 9
     end
+
+    it 'quality decrease doubles after sell_by date has passed' do
+      item = Item.new("foo", -1, 10)
+      items = [item]
+      gilded_rose = GildedRose.new(items)
+      gilded_rose.update_quality()
+      expect(item.quality).to eq 8
+    end
+
+    it 'never has a negative quality' do
+      item = Item.new("foo", 1, 0)
+      items = [item]
+      gilded_rose = GildedRose.new(items)
+      gilded_rose.update_quality()
+      expect(item.quality).to eq 0
+    end
   end
 
   context 'for Aged Brie' do
@@ -27,6 +43,14 @@ describe 'Gilded Rose Features' do
       gilded_rose = GildedRose.new(items)
       gilded_rose.update_quality()
       expect(item.quality).to eq 11
+    end
+
+    it 'never updates the quality above 50' do
+      item = Item.new("Aged Brie", 5, 50)
+      items = [item]
+      gilded_rose = GildedRose.new(items)
+      gilded_rose.update_quality()
+      expect(item.quality).to eq 50
     end
   end
 
@@ -74,11 +98,19 @@ describe 'Gilded Rose Features' do
     end
 
     it 'quality set to 0 after concert' do
-      item = Item.new("Backstage passes to a TAFKAL80ETC concert", 0, 10)
+      item = Item.new("Backstage passes to a TAFKAL80ETC concert", -1, 10)
       items = [item]
       gilded_rose = GildedRose.new(items)
       gilded_rose.update_quality()
       expect(item.quality).to eq 0
+    end
+
+    it 'never updates the quality above 50' do
+      item = Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 50)
+      items = [item]
+      gilded_rose = GildedRose.new(items)
+      gilded_rose.update_quality()
+      expect(item.quality).to eq 50
     end
   end
 
