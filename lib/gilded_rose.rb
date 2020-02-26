@@ -49,7 +49,7 @@ class GildedRose
   end
 
   def update_aged_brie(item)
-    item.quality += 1
+    item.quality < 50 ? item.quality += 1 : item.quality
   end
 
   private
