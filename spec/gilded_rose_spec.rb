@@ -24,6 +24,21 @@ describe GildedRose do
       expect(@item.quality).to eq 50
     end
   end
+
+  describe '#update_sulfuras' do
+    before do
+      @item = Item.new("Sulfuras, Hand of Ragnaros", 10, 10)
+      subject.update_sulfuras(@item)
+    end
+
+    it 'never updates the quality' do
+      expect(@item.quality).to eq 10
+    end
+
+    it 'never updates the sell_in' do
+      expect(@item.sell_in).to eq 10
+    end
+  end
   
 
 end

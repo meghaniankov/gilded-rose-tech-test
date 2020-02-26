@@ -3,6 +3,7 @@ require 'gilded_rose'
 describe 'Gilded Rose Features' do
 
   it 'updates the sell_in date of item at the end of each day' do
+    item = Item.new("Aged Brie", 5, 10)
     item = Item.new("foo", 5, 10)
     items = [item]
     gilded_rose = GildedRose.new()
