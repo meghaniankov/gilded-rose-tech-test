@@ -8,6 +8,17 @@ describe GildedRose do
       expect(items[0].name).to_not eq "fixme"
     end
   end
+
+  describe '#update_aged_brie' do
+    before do
+      @item = Item.new("Aged Brie", 0, 10)
+      subject.update_aged_brie(@item)
+    end
+
+    it 'increases the quality at the end of each day' do
+      expect(@item.quality).to eq 11
+    end
+  end
   
 
 end
