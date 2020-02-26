@@ -1,3 +1,4 @@
+require 'aged_brie'
 class GildedRose
 
   def update_quality(items)
@@ -19,15 +20,15 @@ class GildedRose
   end
 
   def update_backstage_passes(item)
-    if item.quality == 50
-      item.quality
-    elsif item.sell_in <= 0
+    return item.quality if item.quality == 50
+
+    if item.sell_in <= 0
       item.quality = 0
     elsif item.sell_in <= 5
       item.quality += 3
     elsif item.sell_in <= 10
       item.quality += 2
-    else
+    elsif item.sell_in > 10
       item.quality += 1
     end
 
@@ -35,21 +36,22 @@ class GildedRose
   end
 
   def update_other(item)
-    if item.quality == 0
-      item.quality
-    elsif item.sell_in < 0
+    return item.quality if item.quality == 0
+
+    if item.sell_in < 0
       item.quality -= 2
     else
       item.quality -= 1
     end
 
     update_sell_in(item)
-
   end
 
   def update_sell_in(item)
     item.sell_in -= 1
   end
+
+  ITEM_TYPES = { 'Aged Brie' => AgedBrie }
 
 end
 
