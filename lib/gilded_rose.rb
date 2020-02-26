@@ -74,7 +74,11 @@ class GildedRose
   end
 
   def update_other(item)
-    item.quality -= 1
+    if item.sell_in < 0
+      item.quality -= 2
+    else
+      item.quality -= 1
+    end
   end
 
 end
