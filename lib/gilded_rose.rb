@@ -48,8 +48,6 @@ class GildedRose
     item.sell_in -= 1
   end
 
-  ITEM_TYPES = { 'Aged Brie' => AgedBrie }
-
 end
 
 class Item
