@@ -75,19 +75,22 @@ describe GildedRose do
   end
   
   describe '#update_other' do
-    before do
-      @item = Item.new("foo", 5, 10)
-      subject.update_other(@item)
-    end
-
     it 'decreases quality at the end of each day' do
-      expect(@item.quality).to eq 9
+      item = Item.new("foo", 5, 10)
+      subject.update_other(item)
+      expect(item.quality).to eq 9
     end
 
     it 'decreases quality x2 after sell_in date has passed' do
       item = Item.new("foo", -1, 10)
       subject.update_other(item)
       expect(item.quality).to eq 8
+    end
+
+    it 'never has a negative quality' do
+      item = Item.new("foo", 5, 0)
+      subject.update_other(item)
+      expect(item.quality).to eq 0
     end
   end
 
