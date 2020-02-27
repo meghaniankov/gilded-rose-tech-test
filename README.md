@@ -90,7 +90,7 @@ Choose [legacy code](https://github.com/emilybache/GildedRose-Refactoring-Kata) 
   - I made sure that the feature tests never failed. 
   - After I extracted all of the logic into individual methods, I replaced the legacy code with each method.
 * At this point I had refactored all of the legacy code but the new code was not DRY. 
-* I chose to break out the Item types into Modules for three reasons:
+* I chose to break out the Item types into Modules for two reasons:
   1. The modules would encapsulate all of the calculations for that item type. 
   2. It would be easy to extend the program with new items. The only changes would be making a new module with corresponding calculations and adding that items name/module pair to the ITEM_TYPES hash in the GildedRose class.
 * As always, I used TDD throughout.
