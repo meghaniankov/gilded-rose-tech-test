@@ -11,8 +11,8 @@ describe OtherItem do
     end
 
     it 'decreases quality x2 after sell_in date has passed' do
-      11.times { subject.update(item) }
-      expect(item.quality).to eq 88
+      12.times { subject.update(item) }
+      expect(item.quality).to eq 87
     end
 
     it 'never has a negative quality' do

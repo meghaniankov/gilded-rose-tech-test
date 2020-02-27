@@ -1,8 +1,8 @@
 module OtherItem
 
   def self.update(item)
-    update_sell_in(item)
     update_quality(item)
+    update_sell_in(item)
     item
   end
 
