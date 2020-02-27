@@ -1,4 +1,4 @@
-module AgedBrie
+module OtherItem
 
   def self.update(item)
     update_sell_in(item)
@@ -9,7 +9,14 @@ module AgedBrie
   private
 
   def self.update_quality(item)
-    item.quality < 50 ? item.quality += 1 : item.quality
+    return item.quality if item.quality == 0
+
+    if item.sell_in < 0
+
+      item.quality -= 2
+    else
+      item.quality -= 1
+    end
   end
 
   def self.update_sell_in(item)
