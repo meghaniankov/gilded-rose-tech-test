@@ -1,12 +1,13 @@
 require 'aged_brie'
 require 'sulfuras'
+require 'backstage_passes'
 
 class GildedRose
 
   def update_quality(items)
     items.each do |item|
-      @special_item = ITEM_TYPES[item.name]
-      @special_item != nil ? @special_item.update(item) : OtherItem.update(item)
+      special_item = ITEM_TYPES[item.name]
+      special_item != nil ? special_item.update(item) : OtherItem.update(item)
     end
   end
 

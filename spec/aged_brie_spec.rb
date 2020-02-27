@@ -1,6 +1,7 @@
 require 'aged_brie'
 
 describe AgedBrie do
+
   let(:item) { Item.new('Aged Brie', 10, 10) }
 
   describe '#update' do
