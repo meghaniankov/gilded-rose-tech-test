@@ -9,12 +9,4 @@ describe GildedRose do
     end
   end
 
-  describe '#update_sell_in' do
-    it 'decreases at the end of each day' do
-      item = Item.new("foo", 5, 10)
-      subject.update_sell_in(item)
-      expect(item.sell_in).to eq 4
-    end
-  end
-
 end
