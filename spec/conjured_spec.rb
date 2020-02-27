@@ -20,7 +20,10 @@ describe Conjured do
       subject.update(item)
       expect(item.quality).to eq 0
     end
-
+    
+    it 'returns the item' do
+      expect(subject.update(item)).to eq item
+    end
   end
 
 end
