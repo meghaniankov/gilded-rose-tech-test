@@ -8,6 +8,8 @@ module Conjured
   private
 
   def self.update_quality(item)
+    return item.quality if item.quality.zero?
+
     item.sell_in.negative? ? item.quality -= 4 : item.quality -= 2
   end
 

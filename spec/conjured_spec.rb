@@ -14,6 +14,13 @@ describe Conjured do
       12.times { subject.update(item) }
       expect(item.quality).to eq 74
     end
+
+    it 'never has a negative quality' do
+      item = Item.new("Conjured Mana Cake", 5, 0)
+      subject.update(item)
+      expect(item.quality).to eq 0
+    end
+
   end
 
 end

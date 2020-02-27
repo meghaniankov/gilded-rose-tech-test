@@ -125,13 +125,20 @@ describe 'Gilded Rose Features' do
       expect(item.quality).to eq 8
     end
 
-
     it 'quality decrease doubles (-4) after sell_by date has passed' do
       item = Item.new("Conjured Mana Cake", -1, 10)
       items = [item]
       gilded_rose = GildedRose.new()
       gilded_rose.update_quality(items)
       expect(item.quality).to eq 6
+    end
+
+    it 'never has a negative quality' do
+      item = Item.new("Conjured Mana Cake", 1, 0)
+      items = [item]
+      gilded_rose = GildedRose.new()
+      gilded_rose.update_quality(items)
+      expect(item.quality).to eq 0
     end
   end
 
