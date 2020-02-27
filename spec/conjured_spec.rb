@@ -9,6 +9,11 @@ describe Conjured do
       subject.update(item)
       expect(item.quality).to eq 98
     end
+
+    it 'decreases quality x2 after sell_in date has passed' do
+      12.times { subject.update(item) }
+      expect(item.quality).to eq 74
+    end
   end
 
 end

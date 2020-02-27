@@ -117,12 +117,21 @@ describe 'Gilded Rose Features' do
   end
 
   context 'for a Conjured item' do
-    it 'updates the quality at the end of each day' do
+    it 'updates the quality (-2) at the end of each day' do
       item = Item.new("Conjured Mana Cake", 5, 10)
       items = [item]
       gilded_rose = GildedRose.new()
       gilded_rose.update_quality(items)
       expect(item.quality).to eq 8
+    end
+
+
+    it 'quality decrease doubles (-4) after sell_by date has passed' do
+      item = Item.new("Conjured Mana Cake", -1, 10)
+      items = [item]
+      gilded_rose = GildedRose.new()
+      gilded_rose.update_quality(items)
+      expect(item.quality).to eq 6
     end
   end
 
