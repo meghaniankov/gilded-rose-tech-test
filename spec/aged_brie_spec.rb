@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'aged_brie'
 
 describe AgedBrie do

@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'gilded_rose'
 
 describe 'Gilded Rose Features' do
@@ -114,7 +115,5 @@ describe 'Gilded Rose Features' do
       expect(item.quality).to eq 50
     end
   end
-
-
 
 end

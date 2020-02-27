@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'other_item'
 
 describe OtherItem do

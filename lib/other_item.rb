@@ -9,14 +9,9 @@ module OtherItem
   private
 
   def self.update_quality(item)
-    return item.quality if item.quality == 0
+    return item.quality if item.quality.zero?
 
-    if item.sell_in < 0
-
-      item.quality -= 2
-    else
-      item.quality -= 1
-    end
+    item.sell_in.negative? ? item.quality -= 2 : item.quality -= 1
   end
 
   def self.update_sell_in(item)

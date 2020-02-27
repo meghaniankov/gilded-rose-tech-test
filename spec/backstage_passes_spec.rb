@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'backstage_passes'
 
 describe BackstagePasses do

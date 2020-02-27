@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'gilded_rose'
 
 describe GildedRose do

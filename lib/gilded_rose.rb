@@ -13,7 +13,11 @@ class GildedRose
 
   private
 
-  ITEM_TYPES = { 'Aged Brie' => AgedBrie, 'Sulfuras, Hand of Ragnaros' => Sulfuras, 'Backstage passes to a TAFKAL80ETC concert' => BackstagePasses }
+  ITEM_TYPES = { 'Aged Brie' => AgedBrie, 
+                 'Sulfuras, Hand of Ragnaros' => Sulfuras,
+                 'Backstage passes to a TAFKAL80ETC concert' => BackstagePasses 
+  }
+  
 end
 
 class Item
