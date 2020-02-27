@@ -116,4 +116,15 @@ describe 'Gilded Rose Features' do
     end
   end
 
+  context 'for a Conjured item' do
+    it 'updates the quality at the end of each day' do
+      item = Item.new("Conjured Mana Cake", 5, 10)
+      items = [item]
+      gilded_rose = GildedRose.new()
+      gilded_rose.update_quality(items)
+      expect(item.quality).to eq 8
+    end
+  end
+
+
 end

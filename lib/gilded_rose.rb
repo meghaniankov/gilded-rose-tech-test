@@ -1,6 +1,7 @@
 require 'aged_brie'
 require 'sulfuras'
 require 'backstage_passes'
+require 'conjured'
 
 class GildedRose
 
@@ -15,7 +16,8 @@ class GildedRose
 
   ITEM_TYPES = { 'Aged Brie' => AgedBrie, 
                  'Sulfuras, Hand of Ragnaros' => Sulfuras,
-                 'Backstage passes to a TAFKAL80ETC concert' => BackstagePasses 
+                 'Backstage passes to a TAFKAL80ETC concert' => BackstagePasses,
+                 'Conjured Mana Cake' => Conjured
   }
   
 end
